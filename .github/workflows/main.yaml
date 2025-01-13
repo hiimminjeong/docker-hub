@@ -8,7 +8,7 @@ on:
     branches:
       - main
 env:
-  DOCKER_REPOSITORY: hiimminjeong/docker-repo
+  DOCKER_REPOSITORY: mjtwinssbbc/docker-repo
   DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
   DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
 
@@ -36,7 +36,7 @@ jobs:
     - name: Repository checkout
       uses: actions/checkout@v2
       with:
-        repository: haneulka/argocd-kube
+        repository: hiimminjeong/argocd-kube
         token: ${{ secrets.MY_GITHUB_TOKEN }}
 
     - name: Add date and push
@@ -47,4 +47,4 @@ jobs:
         git config --global user.email "github-actions@github.com"
         git config --global user.name "github-actions"
         git commit -am "Inject Tag"
-        git push  
+        git push
